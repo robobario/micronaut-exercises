@@ -3,4 +3,4 @@ files:
 - name: src/task/Task.java
   visible: true
 - name: test/task/Tests.java
-  visible: true
+  visible: false
