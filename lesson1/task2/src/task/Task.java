@@ -1,12 +1,14 @@
 package task;
 
 import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
 
-@Controller("/hello")
+@Controller("/monkeys")
 public class Task {
 
+    @Get("{id}")
     public String index() {
-        return "Hello, world!";
+        return "How do I use the id?";
     }
 
 }
