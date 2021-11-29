@@ -1,7 +1,6 @@
 package task;
 
 import io.micronaut.http.HttpRequest;
-import io.micronaut.http.MutableHttpRequest;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
@@ -19,22 +18,20 @@ public class Tests {
 
     @Test
     public void testSolution() {
-        testHeader("superSecure");
+        testPost("superior-apple");
     }
 
 
     @Test
     public void anotherTest() {
-        testHeader("quiteAuthenticated");
+        testPost("excellent-quality");
     }
 
 
-    private void testHeader(String header) {
+    private void testPost(String body) {
         try {
-            MutableHttpRequest<Object> request = HttpRequest.GET("/authenticate");
-            request.header("Authorization", header);
-            String retrieve = client.toBlocking().retrieve(request);
-            Assertions.assertEquals(header, retrieve);
+            String retrieve = client.toBlocking().retrieve(HttpRequest.POST("/apples/ambrosia", body));
+            Assertions.assertEquals(body, retrieve);
         } catch (HttpClientResponseException e) {
             Assertions.fail("Request to /hello failed with response " + e.getResponse().status());
         } catch (Exception e) {

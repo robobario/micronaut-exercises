@@ -1,13 +1,15 @@
 package task;
 
-import io.micronaut.http.annotation.*;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Post;
 
-@Controller("/authenticate")
+@Controller("/apples")
 public class Task {
 
-    @Get()
-    public String index() {
-        return "How do I respond headers?";
+    @Post("/{id}")
+    public String index(HttpRequest<String> request) {
+        return "How do I respond body?";
     }
 
 }

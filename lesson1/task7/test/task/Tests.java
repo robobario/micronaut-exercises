@@ -19,22 +19,23 @@ public class Tests {
 
     @Test
     public void testSolution() {
-        testHeader("superSecure");
+        testParameter("superSecure");
     }
 
 
     @Test
     public void anotherTest() {
-        testHeader("quiteAuthenticated");
+        testParameter("quiteAuthenticated");
     }
 
 
-    private void testHeader(String header) {
+    private void testParameter(String header) {
         try {
-            MutableHttpRequest<Object> request = HttpRequest.GET("/authenticate");
-            request.header("Authorization", header);
+            MutableHttpRequest<Object> request = HttpRequest.GET("/queryParam");
+            request.getParameters().add("offset", header);
             String retrieve = client.toBlocking().retrieve(request);
-            Assertions.assertEquals(header, retrieve);
+            String expectation = header == null ? "missing" : header;
+            Assertions.assertEquals(expectation, retrieve);
         } catch (HttpClientResponseException e) {
             Assertions.fail("Request to /hello failed with response " + e.getResponse().status());
         } catch (Exception e) {

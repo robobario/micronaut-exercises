@@ -1,6 +1,11 @@
-# Optional Headers
+# Headers
 
-Note that if a header is not present it will cause the route to not be hit, it needs to be annotated differently if you want to allow null values for the header. See the docs [here](https://docs.micronaut.io/latest/guide/#_bindable_types) about nulls.
+Another common task you might want to do is access the HTTP headers. These are sort of meta-data sent in the HTTP request. They might carry authorization tokens, or describe what types of content the client is sending or is able to receive.
+
+See the binding annotations [here](https://docs.micronaut.io/latest/guide/#_binding_annotations) to see how to access a header via an annotated method parameter.
+
+Alternatively you could bind in a micronaut interface into the method as described [here](https://docs.micronaut.io/latest/guide/#requestResponse) and use the HttpRequest to access the headers.
 
 ## Task
-Make the task controller respond with the string `missing` if the `Authorization` header is not present. Else the value of the header.
+
+Update the Task controller to respond with the Authorization header posted to it.

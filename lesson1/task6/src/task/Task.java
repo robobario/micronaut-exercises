@@ -2,12 +2,12 @@ package task;
 
 import io.micronaut.http.annotation.*;
 
-@Controller("/queryParam")
+@Controller("/authenticate")
 public class Task {
 
-    @Get
-    public String index() {
-        return "How do I use queryParameter";
+    @Get()
+    public String index(@Header String authorization) {
+        return authorization;
     }
 
 }

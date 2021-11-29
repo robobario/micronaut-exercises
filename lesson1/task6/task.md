@@ -1,11 +1,6 @@
-# Query Parameter
+# Optional Headers
 
-We often want to access query parameters.
-
-For example in an URL like `http://api.ducks.nz/ducks?offset=20&limit=10` we will probably want to get at the values of the `offset` and `limit` query parameters.
+Note that if a header is not present it will cause the route to not be hit, it needs to be annotated differently if you want to allow null values for the header. See the docs [here](https://docs.micronaut.io/latest/guide/#_bindable_types) about nulls.
 
 ## Task
-
-Make the index method of the [Task controller](course://lesson1/task6/src/task/Task.java) respond with the value of the `offset` query parameter.
-
-i.e it will receive a request like `/queryParam?offset=2` and respond with `2`
+Make the task controller respond with the string `missing` if the `Authorization` header is not present. Else the value of the header.

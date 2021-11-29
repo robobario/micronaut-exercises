@@ -19,20 +19,27 @@ public class Tests {
 
     @Test
     public void testSolution() {
-        testParameter("superSecure");
+        testHeader("superSecure");
     }
 
 
     @Test
     public void anotherTest() {
-        testParameter("quiteAuthenticated");
+        testHeader("quiteAuthenticated");
+    }
+
+    @Test
+    public void nullTest() {
+        testHeader(null);
     }
 
 
-    private void testParameter(String header) {
+    private void testHeader(String header) {
         try {
-            MutableHttpRequest<Object> request = HttpRequest.GET("/queryParam");
-            request.getParameters().add("offset", header);
+            MutableHttpRequest<Object> request = HttpRequest.GET("/authenticate");
+            if (header != null) {
+                request.header("Authorization", header);
+            }
             String retrieve = client.toBlocking().retrieve(request);
             String expectation = header == null ? "missing" : header;
             Assertions.assertEquals(expectation, retrieve);
