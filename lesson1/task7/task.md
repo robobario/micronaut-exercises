@@ -9,3 +9,5 @@ For example in an URL like `http://api.ducks.nz/ducks?offset=20&limit=10` we wil
 Make the index method of the [Task controller](course://lesson1/task6/src/task/Task.java) respond with the value of the `offset` query parameter.
 
 i.e it will receive a request like `/queryParam?offset=2` and respond with `2`
+
+Use the <a href="psi_element://io.micronaut.http.annotation.QueryValue">@QueryValue</a>  annotation. Interestingly this annotation can be used to target query parameters or named path variables.
