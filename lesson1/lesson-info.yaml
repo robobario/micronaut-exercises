@@ -14,3 +14,4 @@ content:
 - json-binding
 - json-response-binding
 - dependency-injection
+- dependency-injection-named

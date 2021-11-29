@@ -1,6 +1,6 @@
 # Dependency Injection
 
-Micronaut provides inverson-of-control. This is where we rely on the framework to call into our code. So we might declare a class that requires some dependency plugged into it's constructor, but it is up to the micronaut framework to construct both objects and make the constructor calls for us.
+Micronaut provides [inverson-of-control](https://docs.micronaut.io/latest/guide/#ioc). This is where we rely on the framework to call into our code. So we might declare a class that requires some dependency plugged into it's constructor, but it is up to the micronaut framework to construct both objects and make the constructor calls for us.
 
 This gives the framework a lot of power to do things like replace our plain objects with proxies that implement functionality like automatic retries.
 
