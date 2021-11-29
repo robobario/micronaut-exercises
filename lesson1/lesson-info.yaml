@@ -15,3 +15,4 @@ content:
 - json-response-binding
 - dependency-injection
 - dependency-injection-named
+- dependency-injection-context-scope
