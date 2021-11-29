@@ -13,3 +13,4 @@ content:
 - accepted-content-type
 - json-binding
 - json-response-binding
+- dependency-injection
