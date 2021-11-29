@@ -10,3 +10,4 @@ content:
 - query-alternative
 - response-code
 - response-code-alternative-1
+- accepted-content-type
