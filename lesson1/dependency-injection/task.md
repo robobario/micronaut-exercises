@@ -8,4 +8,4 @@ Micronaut implements most of this by reading the annotations from our classes at
 
 ## Task
 
-Wire in the Service into the Task controller using the @Inject annotation and return the result of Service::getResponse from the `index` method of the controller.
+Wire in the [Service](course://lesson1/dependency-injection/src/task/Service.java) into the [Task](course://lesson1/dependency-injection/src/task/Task.java) controller using the <a href="psi_element://jakarta.inject.Inject">@Inject</a> annotation and return the result of Service::getResponse from the `index` method of the controller.
