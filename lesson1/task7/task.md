@@ -6,7 +6,7 @@ For example in an URL like `http://api.ducks.nz/ducks?offset=20&limit=10` we wil
 
 ## Task
 
-Make the index method of the [Task controller](course://lesson1/task6/src/task/Task.java) respond with the value of the `offset` query parameter.
+Make the index method of the [Task controller](course://lesson1/task7/src/task/Task.java) respond with the value of the `offset` query parameter.
 
 i.e it will receive a request like `/queryParam?offset=2` and respond with `2`
 
