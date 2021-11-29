@@ -11,3 +11,4 @@ content:
 - response-code
 - response-code-alternative-1
 - accepted-content-type
+- json-binding
