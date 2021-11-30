@@ -18,3 +18,4 @@ content:
 - dependency-injection-context-scope
 - dependency-injection-prototype-scope
 - dependency-injection-configuration
+- application-configuration
