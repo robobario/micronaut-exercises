@@ -16,3 +16,4 @@ content:
 - dependency-injection
 - dependency-injection-named
 - dependency-injection-context-scope
+- dependency-injection-prototype-scope
