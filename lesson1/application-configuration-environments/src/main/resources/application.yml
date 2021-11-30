@@ -1,0 +1,2 @@
+propA: "propertyA from application.yml"
+propB: "propertyB from application.yml"

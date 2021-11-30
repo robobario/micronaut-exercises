@@ -19,3 +19,4 @@ content:
 - dependency-injection-prototype-scope
 - dependency-injection-configuration
 - application-configuration
+- application-configuration-environments
