@@ -3,30 +3,21 @@ package task;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-import java.util.concurrent.ArrayBlockingQueue;
-
 @Controller("/serviceQuery")
 public class Task {
 
-    private final ServiceA a;
-    private final ServiceA b;
+    private final ServiceA service;
 
     public Task(
-            ServiceA a,
-            ServiceA b
+            ServiceA a
     ) {
-        this.a = a;
-        this.b = b;
+        this.service = a;
     }
 
     @Get
     public String index() {
-        return a.getResponse() + "," + b.getResponse();
+        return service.getResponse();
     }
-    
-    @Get("/same")
-    public String same() {
-        return String.valueOf(a == b);
-    }
+
 
 }

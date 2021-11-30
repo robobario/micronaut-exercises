@@ -22,7 +22,20 @@ public class Tests {
         try {
             MutableHttpRequest<Object> request = HttpRequest.GET("/serviceQuery");
             String retrieve = client.toBlocking().retrieve(request);
-            Assertions.assertEquals("b", retrieve, "unexpected response from /serviceQuery");
+            Assertions.assertEquals("1,2", retrieve, "unexpected response from /serviceQuery");
+        } catch (HttpClientResponseException e) {
+            Assertions.fail("Request to /serviceQuery failed with response " + e.getResponse().status());
+        } catch (Exception e) {
+            Assertions.fail("Request to /serviceQuery failed with exception " + e.getMessage(), e);
+        }
+    }
+
+    @Test
+    public void testSame() {
+        try {
+            MutableHttpRequest<Object> request = HttpRequest.GET("/serviceQuery/same");
+            String retrieve = client.toBlocking().retrieve(request);
+            Assertions.assertEquals("false", retrieve, "unexpected response from /serviceQuery/same");
         } catch (HttpClientResponseException e) {
             Assertions.fail("Request to /serviceQuery failed with response " + e.getResponse().status());
         } catch (Exception e) {

@@ -1,21 +1,14 @@
 package task;
 
-import jakarta.inject.Singleton;
-
-import java.util.concurrent.atomic.AtomicLong;
-
-@Singleton
 public class ServiceA{
 
-    String response;
+    private final String string;
 
-    private static AtomicLong counter = new AtomicLong(1);
-
-    ServiceA(){
-       response = String.valueOf(counter.getAndIncrement());
+    public ServiceA(String string) {
+        this.string = string;
     }
 
     public String getResponse() {
-        return response;
+        return string;
     }
 }

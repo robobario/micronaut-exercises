@@ -1,11 +1,24 @@
-# Dependency Injection - prototype scope
+# Dependency Injection - factory classes
 
-So far we have looked at <a href="psi_element://jakarta.inject.Singleton">@Singleton</a> and <a href="psi_element://io.micronaut.context.annotation.Context">@Context</a> beans which are both instantiated once per context.
+Another common thing we might want to do is instantiate some java classes that we have pulled in from third-party libraries. They likely don't have micronaut/jakarta annotations so we want a way to instantiate them and make them available for injection.
 
-Another thing you can do is tell the Context to instantiate a new instance of your bean where-ever it is injected.
+For this we can annotate a class with <a href="psi_element://io.micronaut.context.annotation.Factory">@Factory</a> like so:
 
-To do this you use <a href="psi_element://io.micronaut.context.annotation.Prototype">@Prototype</a> scope.
+```java
+@Factory
+class WidgetFactory {
 
-# Task
+    @Singleton
+    Widget widget() {
+        return new Widget();
+    }
+}
+```
 
-Modify ServiceA so that two different instances are injected into Task. Currently it is annotated as a Singleton so only a single instance is constructed and wired into the Task controller.
+See docs [here](https://docs.micronaut.io/latest/guide/#factories)
+
+## Task
+
+Modify the BeanConfiguration class to:
+1. annotate the stringB method so it's result is a named singleton
+2. wire stringB into the `serviceA` method by changing the name in the `@Named` parameter

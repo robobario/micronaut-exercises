@@ -6,5 +6,3 @@ files:
   visible: true
 - name: src/task/ServiceA.java
   visible: true
-- name: src/task/BeanConfiguration.java
-  visible: true
